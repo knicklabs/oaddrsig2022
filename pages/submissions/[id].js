@@ -1,10 +1,7 @@
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { Layout } from '../../components'
 import {xlsxToJson} from "../../utils"
 import Head from "next/head";
-
-const PdfViewer = dynamic(() => import('../../components/PdfViewer'), {ssr: false })
 
 export default function Submission({ submission }) {
   if (!submission) {

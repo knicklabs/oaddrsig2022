@@ -3,7 +3,7 @@ import { Card, Grid, Layout, Section } from '../components'
 
 import { xlsxToJson } from '../utils'
 
-export default function Home({ submissions, universities }) {
+export default function Home({ presentations, submissions }) {
   return (
       <Layout isHome>
         <Head>
@@ -40,6 +40,23 @@ export default function Home({ submissions, universities }) {
             </div>
           </div>
         </Section>
+        <Section
+          title="Oral Presentations"
+          subtitle="Find slides and scripts here"
+        >
+          <Grid>
+            { presentations.map(({ id, title, presenter, contactEmail, powerpoint, script }) => (
+              <Card
+                title={title}
+                authorEmail={contactEmail}
+                authorName={presenter}
+                file={powerpoint ? `/downloads/posters/${powerpoint}` : undefined}
+                key={id}
+                tag="Presentation"
+              />
+            ))}
+          </Grid>
+        </Section>
       </Layout>
   )
 }
@@ -47,6 +64,10 @@ export default function Home({ submissions, universities }) {
 export async function getStaticProps(context) {
   return {
     props: {
+      presentations: xlsxToJson({
+        filename: 'data/data.xlsx',
+        worksheetName: 'ORAL PRESENTATION PPT',
+      }),
       submissions: xlsxToJson({
         filename: 'data/data.xlsx',
         worksheetName: 'Poster Presentations',

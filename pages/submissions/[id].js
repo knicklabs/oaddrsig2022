@@ -17,8 +17,8 @@ export default function Submission({ submission }) {
         <title>Poster Submission | 2022 RSIG Research Day | OADD</title>
         <meta name="description" content={`Poster submission: ${submission.title}`} />
       </Head>
-      <article className="bg-white p-5 shadow-md rounded-md flex flex-col flex-col-reverse">
-        <header className="bg-white pt-5">
+      <article className="bg-white p-5 shadow-md rounded-md">
+        <header className="bg-white pb-5">
           <div className="flex justify-between items-start flex-wrap sm:flex-nowrap">
             <div>
               <div className="flex items-center">
@@ -27,25 +27,27 @@ export default function Submission({ submission }) {
                     {submission.title}
                   </h2>
                   <p className="text-sm text-gray-500">
-                    {`${submission.contactAuthor}${submission.coAuthors ? ', et al' : ''}`}
+                    {`${submission.contactAuthor}${submission.coAuthors ? ', et al.' : ''}`}
                   </p>
                 </div>
               </div>
             </div>
-            <div className="mt-4 sm:mt-1 sm:ml-4 flex-shrink-0 flex">
-              <a href={`/downloads/${submission.file}`} download
-                 className="sm:ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <svg className="-ml-1 mr-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <span>
-                Download
-              </span>
-              </a>
-            </div>
+            {submission.file && (
+              <div className="mt-4 sm:mt-1 sm:ml-4 flex-shrink-0 flex">
+                <a href={`/downloads/posters/${submission.file}`} download
+                  className="sm:ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <svg className="-ml-1 mr-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>
+                  Download PDF
+                </span>
+                </a>
+              </div>
+            )}
           </div>
         </header>
-        <PdfViewer url={`/downloads/${submission.file}`} />
+        <div className="video" dangerouslySetInnerHTML={{__html: submission.embed}} />
       </article>
       <div className="text-center mt-12">
         <Link href="/">

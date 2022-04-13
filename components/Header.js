@@ -14,7 +14,7 @@ export const Header = ({ isExpanded= false }) => {
         <>
           <div className="mt-5 max-w-7xl mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
-              <a href="#"
+              <a href="/downloads/posters/oadd-2022-program"
                  className="transition duration-500 ease-in-out flex items-center justify-center px-8 py-3 border border-transparent text-base text-center font-medium rounded-md text-white bg-green-700 hover:bg-green-800 md:py-4 md:text-lg md:px-10"
                  download
               >
@@ -22,7 +22,7 @@ export const Header = ({ isExpanded= false }) => {
               </a>
             </div>
             <div className="rounded-md shadow mt-2 sm:mt-0 sm:ml-2">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf746hfBsTTMdml6Wr98N3dnlLggkTYaH9kCgxssTDEAl-GmQ/closedform"
+              <a href="https://forms.gle/2tMpXDkt7ZzEphPk9"
                  className="transition duration-500 ease-in-out w-full flex items-center justify-center px-8 py-3 border border-transparent text-base text-center font-medium rounded-md text-white bg-gray-700 hover:bg-gray-800 md:py-4 md:text-lg md:px-10"
                  target="_blank"
                  rel="nofollow noopener noreferrer"
@@ -42,7 +42,7 @@ export const Header = ({ isExpanded= false }) => {
                 vote for the People’s Choice Award
               </a>
               {' '}and{' '}
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf746hfBsTTMdml6Wr98N3dnlLggkTYaH9kCgxssTDEAl-GmQ/closedform"
+              <a href="https://forms.gle/2tMpXDkt7ZzEphPk9"
                  className="transition duration-500 ease-in-out text-green-600 hover:text-green-700 font-bold"
                  target="_blank"
                  rel="nofollow noopener noreferrer"

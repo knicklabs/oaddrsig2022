@@ -14,7 +14,7 @@ export const Header = ({ isExpanded= false }) => {
         <>
           <div className="mt-5 max-w-7xl mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
-              <a href="/downloads/posters/oadd-2022-program"
+              <a href="/downloads/posters/oadd-2022-program.pdf"
                  className="transition duration-500 ease-in-out flex items-center justify-center px-8 py-3 border border-transparent text-base text-center font-medium rounded-md text-white bg-green-700 hover:bg-green-800 md:py-4 md:text-lg md:px-10"
                  download
               >
